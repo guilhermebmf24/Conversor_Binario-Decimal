@@ -1,7 +1,6 @@
 let caixa_decimal = document.querySelector('input#decimal')
 let caixa_binario = document.querySelector('input#binario')
 
-
 let valor_decimal =  Number(caixa_decimal.value)
 
 
@@ -14,9 +13,7 @@ function execucao(SistemaNumerico){
 
     if(SistemaNumerico == binario){
 
-
         let decimal_obtido = convercao_para_decimal()
-
 
         caixa_decimal.value = decimal_obtido
     }
@@ -25,7 +22,7 @@ function execucao(SistemaNumerico){
 
 function convercao_para_decimal(){
 
-    let valor_binario =  Number(caixa_binario.value)
+    let valor_binario = caixa_binario.value
 
     let digitos = caixa_binario.value.length
 
@@ -33,24 +30,20 @@ function convercao_para_decimal(){
 
     while(digitos > 0){
 
-        if( valor_binario % 10 > 0 ){
-            window.alert("1")
-            decimal_obtido += (2 ^ digitos)
+        if( valor_binario [0] == 1){
+
+            decimal_obtido += 2 ** (digitos - 1)
             digitos --
 
-            valor_binario = (valor_binario - 1)/10
-        }else{
+            valor_binario = valor_binario.substring(1)
 
-            decimal_obtido += (2 ^ digitos ) - 1
+        }else{
             digitos--
 
-            valor_binario = valor_binario / 10
+            valor_binario = valor_binario.substring(1)
         }
 
     }
 
     return decimal_obtido
 }
-
-
-//**2^digitos-1
