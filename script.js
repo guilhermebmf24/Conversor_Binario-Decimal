@@ -3,7 +3,6 @@ let caixa_binario = document.querySelector('input#binario')
 
 let valor_decimal =  Number(caixa_decimal.value)
 
-
 function execucao(SistemaNumerico){
 
     if(SistemaNumerico == decimal){
@@ -47,3 +46,4 @@ function convercao_para_decimal(){
 
     return decimal_obtido
 }
+
