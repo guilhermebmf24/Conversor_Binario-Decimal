@@ -1,5 +1,5 @@
-let caixa_decimal = document.querySelector('input#decimal')
-let caixa_binario = document.querySelector('input#binario')
+let caixa_decimal = document.querySelector('#decimal')
+let caixa_binario = document.querySelector('#binario')
 
 let valor_decimal =  Number(caixa_decimal.value)
 
