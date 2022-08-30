@@ -1,9 +1,17 @@
 const caixa_decimal = document.querySelector('#decimal')
 const caixa_binario = document.querySelector('#binario')
 
+caixa_binario.addEventListener('keydown', (evento)=>{
+    if(evento.key != '1' && evento.key != '0' && evento.key != 'Backspace'){
+        evento.preventDefault()
+        console.log('Valor invalido, ultilize apenas os valores 0 e 1 no campo de numeros binarios!')
+    }
+})
+
 caixa_binario.addEventListener('keyup', ()=>{
     execucao(binario)
 })
+
 caixa_decimal.addEventListener('keyup', ()=>{
     execucao(decimal)
 })
