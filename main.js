@@ -1,4 +1,3 @@
-
 let caixa_decimal = document.querySelector('#decimal')
 let caixa_binario = document.querySelector('#binario')
 
@@ -11,7 +10,9 @@ caixa_decimal.addEventListener('keyup', ()=>{
     execucao(decimal)
 })
 
+
 let valor_decimal =  Number(caixa_decimal.value)
+
 
 function execucao(SistemaNumerico){
 
