@@ -1,60 +1,48 @@
-let caixa_decimal = document.querySelector('#decimal')
-let caixa_binario = document.querySelector('#binario')
-
+const caixa_decimal = document.querySelector('#decimal')
+const caixa_binario = document.querySelector('#binario')
 
 caixa_binario.addEventListener('keyup', ()=>{
     execucao(binario)
 })
-
 caixa_decimal.addEventListener('keyup', ()=>{
     execucao(decimal)
 })
 
-
-let valor_decimal =  Number(caixa_decimal.value)
-
-
 function execucao(SistemaNumerico){
-
     if(SistemaNumerico == decimal){
-        window.alert("Decimal")
-
+        caixa_binario.value = convercao_para_binario()
     }
-
     if(SistemaNumerico == binario){
-
-        let decimal_obtido = convercao_para_decimal()
-
-        caixa_decimal.value = decimal_obtido
+        caixa_decimal.value = convercao_para_decimal()
     }
-
 }
 
 function convercao_para_decimal(){
-
     let valor_binario = caixa_binario.value
+    let numero_de_digitos = valor_binario.length
+    let decimal_obtido = 0
 
-    let digitos = caixa_binario.value.length
-
-    var decimal_obtido = 0
-
-    while(digitos > 0){
-
-        if( valor_binario [0] == 1){
-
-            decimal_obtido += 2 ** (digitos - 1)
-            digitos --
-
-            valor_binario = valor_binario.substring(1)
-
-        }else{
-            digitos--
-
-            valor_binario = valor_binario.substring(1)
+    for(numero_de_digitos; numero_de_digitos > 0; numero_de_digitos --){
+        if( valor_binario [0] === '1'){
+            decimal_obtido += 2 ** (numero_de_digitos - 1)
         }
-
+    valor_binario = valor_binario.substring(1)  
     }
-
     return decimal_obtido
 }
 
+function convercao_para_binario(){
+    let valor_numerico_decimal = Number(caixa_decimal.value)
+    let binario_obtido = ''
+
+    while(valor_numerico_decimal > 0){
+        if(valor_numerico_decimal % 2 == 0){
+            binario_obtido = 0 + binario_obtido
+        }else{
+            binario_obtido = 1 + binario_obtido
+            valor_numerico_decimal -= 1
+        }
+        valor_numerico_decimal /= 2
+    }
+    return binario_obtido
+}
