@@ -1,5 +1,15 @@
+
 let caixa_decimal = document.querySelector('#decimal')
 let caixa_binario = document.querySelector('#binario')
+
+
+caixa_binario.addEventListener('keyup', ()=>{
+    execucao(binario)
+})
+
+caixa_decimal.addEventListener('keyup', ()=>{
+    execucao(decimal)
+})
 
 let valor_decimal =  Number(caixa_decimal.value)
 
