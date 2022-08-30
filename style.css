@@ -1,18 +1,15 @@
 main{
     width: 500px;
-    height: 120px;
 
     margin: auto;
     margin-top: 50px;
     padding: 10px;
-
-    background-color: antiquewhite;
-    box-shadow: 10px 10px 10px rgb(165, 155, 142);
+    background-color: #ce9e8e;
+    box-shadow: 10px 10px 10px #0000004b;
 
     border-radius: 6px;
 
     font-size: 12px;
-    text-align: center;
 }
 
 input{
@@ -36,4 +33,12 @@ input[type=number] {
 
 p{
     font-size: 16px;
+}
+
+h1, h2{
+    text-align: center;
+}
+
+#centralizar{
+    text-align: center;
 }
