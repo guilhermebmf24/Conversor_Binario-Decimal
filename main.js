@@ -8,6 +8,13 @@ caixa_binario.addEventListener('keydown', (evento)=>{
     }
 })
 
+caixa_decimal.addEventListener('keydown', (evento)=>{
+    if(evento.key == '+' || evento.key == '-' || evento.key == '.' || evento.key == 'e' || evento.key == ','){
+        evento.preventDefault()
+        console.log('Valor invalido, não ultilize simbulos nos campos binario e decimal!')
+    }
+})
+
 caixa_binario.addEventListener('keyup', ()=>{
     execucao(binario)
 })
